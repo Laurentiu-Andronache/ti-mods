@@ -33,6 +33,9 @@
 - [Introduction to MonoMod](tutorials/MonoMod%20Guide.md)
 - [Audio Modding Guide by Stallion](tutorials/Audio%20Modding%20Guide.md)
 
+## Modding Resources
+- [TIShipModdingFramework by Razorback](https://github.com/UNNRazorback/TIShipModdingFramework/tree/master)
+
 ## Tips and Tricks
 - If you want to savegame edit you unpack, edit the embedded json and repack with z7ip, default settings for gzip (format: gzip, 5 - normal,word size:32)
 
