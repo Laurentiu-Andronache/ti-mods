@@ -35,6 +35,7 @@
 
 ## Modding Resources
 - [TIShipModdingFramework by Razorback](https://github.com/UNNRazorback/TIShipModdingFramework/tree/master)
+  - [MonoMod version by Tayta](tutorials/tutorial-files/TIShipModdingFramework_MonoMod.cs)
 
 ## Tips and Tricks
 - If you want to savegame edit you unpack, edit the embedded json and repack with z7ip, default settings for gzip (format: gzip, 5 - normal,word size:32)
