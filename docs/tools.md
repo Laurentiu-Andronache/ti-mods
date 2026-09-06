@@ -6,7 +6,7 @@ Choose tools for the task and the game's **Windows x64 Mono** runtime. The handb
 | --- | --- | --- |
 | Build C# mods | .NET SDK **8.0.424**, any suitable C# editor | [Build environment](../tutorials/Build%20Environment.md); the mod target is `net48` |
 | Load maintained examples | [Unity Mod Manager](https://github.com/newman55/unity-mod-manager) | Use the installed UMM/Harmony pair; examples compile with UMM 0.33/Harmony 2.3.6 |
-| Inspect managed code | [dnSpyEx](https://github.com/dnSpyEx/dnSpy/releases) or [ILSpy](https://github.com/icsharpcode/ILSpy) | Open the game's own `Managed` assemblies read-only; use IL when decompiled C# is ambiguous |
+| Inspect managed code | [dnSpyEx](https://github.com/dnSpyEx/dnSpy/releases) or [ILSpy](https://github.com/icsharpcode/ILSpy) | Follow the [local code-inspection workflow](#inspect-the-installed-game-code), including scripted inspection and evidence limits |
 | Inspect live objects/UI | [UnityExplorer](https://github.com/yukieiji/UnityExplorer) or [RuntimeUnityEditor](https://github.com/ManlyMarco/RuntimeUnityEditor) | Match the package to your loader and Mono; see [debugging](debugging.md) |
 | Build AssetBundles | [Unity 2020.3.49f1](https://unity.com/releases/editor/whats-new/2020.3.49) | The guide's fixed authoring profile; [bundle workflow](assets.md) |
 | Inspect/export assets | [AssetRipper](https://github.com/AssetRipper/AssetRipper) | Start with a small bundle; exported projects may need repair before rebuilding |
@@ -16,6 +16,20 @@ Choose tools for the task and the game's **Windows x64 Mono** runtime. The handb
 | Author map outlines | [Inkscape](https://inkscape.org/release/) | Inspect saved dimensions, layers and paths; [map constraints](../tutorials/MapCreation.md) |
 
 The original [AssetStudio](https://github.com/Perfare/AssetStudio) and [sinai-dev/UnityExplorer](https://github.com/sinai-dev/UnityExplorer) repositories are archived. Prefer the active tools above when choosing a new setup. A tool's own .NET requirement is independent of the target framework of your mod.
+
+## Inspect the installed game code
+
+Terra Invicta's compiled game code is available locally for inspection. Use [ILSpy](https://github.com/icsharpcode/ILSpy) to decompile its managed DLLs into readable C# when investigating game behavior or developing a mod. The main game assembly in a default Windows Steam installation is:
+
+```text
+C:\Program Files (x86)\Steam\steamapps\common\Terra Invicta\TerraInvicta_Data\Managed\Assembly-CSharp.dll
+```
+
+For a custom Steam library, use **Manage > Browse local files**, then open `TerraInvicta_Data/Managed/Assembly-CSharp.dll` and its matching dependencies. Confirm the [installed game version](getting-started.md#identify-the-actual-build); a familiar DLL filename does not establish its API or behavior.
+
+Inspect relevant methods, their callers, and related types to understand required conditions, initialization order, side effects, and return values. Prefer evidence from the installed code over guessing how the game works. For scripted inspection, [ILSpyCmd](https://github.com/icsharpcode/ILSpy/tree/master/ICSharpCode.ILSpyCmd) provides command-line decompilation, while [dnlib](https://github.com/0xd4d/dnlib) lets a .NET program inspect assembly metadata and IL. Inspect IL when reconstructed C# is ambiguous, especially around iterators, lambdas, or unusual control flow.
+
+Decompiled C# is reconstructed from the assembly, not the original source. Clearly distinguish a conclusion from **code inspection** from behavior **verified in a running game**: record the inspected version and relevant type/method, then report the scenario, action, and result of any in-game test separately. Preserve the installed DLLs, keep inspection read-only, and implement changes through your mod. See [code modding](code-modding.md#inspect-the-target-before-patching) and [debugging](debugging.md#confirm-the-fix) for patching and verification.
 
 ## Choose the loader before the package
 

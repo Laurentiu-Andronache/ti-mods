@@ -30,7 +30,7 @@ Consult [native data](native-data.md), [code mods](code-modding.md), [assets](as
 
 ## Inspect installed code without modifying it
 
-Open `TerraInvicta_Data/Managed/Assembly-CSharp.dll` and its matching dependencies in [dnSpyEx or ILSpy](tools.md). Follow the stack trace to the target and its callers. Check the declaring type, overload, accessibility, parameter types and return value before changing a patch. Use the installed assembly read-only and make changes in your mod project.
+Open `TerraInvicta_Data/Managed/Assembly-CSharp.dll` and its matching dependencies in dnSpyEx or ILSpy; the [local code-inspection workflow](tools.md#inspect-the-installed-game-code) covers the installation path, scripted tools, and evidence limits. Follow the stack trace to the target and its callers. Check the declaring type, overload, accessibility, parameter types and return value before changing a patch. Use the installed assembly read-only and make changes in your mod project.
 
 Decompiler output reconstructs C# from IL. Inspect IL when an iterator, lambda, unusual control flow or method-name lookup matters. A familiar filename does not mean that two game versions expose the same API.
 
