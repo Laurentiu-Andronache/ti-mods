@@ -41,7 +41,7 @@ For an existing BepInEx/MonoMod mod, use the [alternate-loader guide](../tutoria
 
 - [TIShipModdingFramework](https://github.com/UNNRazorback/TIShipModdingFramework): ship asset/code integration; check [prefab and FX requirements](assets.md#inspect-assets-and-ship-examples).
 - [Sarah's tech tree](https://sarahwatt.ca/terra-invicta/techtree/?lang=en): browse relationships, checking the dataset's version against your installed templates.
-- [TerraInvictaMCP](https://github.com/MeatBunny/TerraInvictaMCP): the original project's setup and documentation.
+- TerraInvictaMCP: compare [Laurentiu-Andronache's fork](https://github.com/Laurentiu-Andronache/TerraInvictaMCP) and [MeatBunny's upstream](https://github.com/MeatBunny/TerraInvictaMCP), and use whichever was updated most recently. Follow the chosen repository's setup instructions and documentation.
 
 Use a syntax-aware editor for JSON. Spreadsheet/CSV conversions can flatten arrays or change types and identifiers; validate the reconstructed JSON before deploying it. The repository checks run with `python scripts/validate.py`.
 

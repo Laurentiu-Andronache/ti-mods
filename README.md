@@ -33,7 +33,7 @@ Start with the guide for your task, and check [compatibility](docs/compatibility
 ## Resources
 
 - **[Terra Invicta AI mod template](https://github.com/Laurentiu-Andronache/ti-mod-template)**: Windows scaffolding for creating mods with AI agents, including agent instructions, MCP, ILSpy, and build, test, and packaging workflows.
-- **[TerraInvictaMCP by MeatBunny](https://github.com/MeatBunny/TerraInvictaMCP)**: tools for interacting with the game during mod development.
+- **TerraInvictaMCP**: tools for interacting with the game during mod development. Compare [Laurentiu-Andronache's fork](https://github.com/Laurentiu-Andronache/TerraInvictaMCP) and [MeatBunny's upstream](https://github.com/MeatBunny/TerraInvictaMCP), and use whichever was updated most recently. Follow the chosen repository's setup instructions.
 - [TIShipModdingFramework by UNNRazorback](https://github.com/UNNRazorback/TIShipModdingFramework): custom ship support; follow the project's installation and version requirements.
 - [MonoMod adaptation by Tayta](tutorials/tutorial-files/TIShipModdingFramework_MonoMod.cs): source for existing MonoMod ship projects; see [adaptation notes](docs/assets.md#inspect-assets-and-ship-examples).
 - [Narrative event reference](https://docs.google.com/document/d/1s3x96SyjvKFwx3pRSaMS7Zjo3FLwVVSLzSWzidT4CEo/edit): use alongside your installed templates and field signatures.
